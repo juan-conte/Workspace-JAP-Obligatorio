@@ -6,7 +6,7 @@ Desde aquí podras acceder al repositorio en GitHub de mi entrega 0 para el obli
 Chequea mi **perfil de diseño** [aquí!](https://www.instagram.com/2km.exe/)
 
 
-### Contacto
+## Contacto
 
 -Para contactarme en mi mail personal has click [aquí](mailto:juanmanuconte@gmail.com)
 
