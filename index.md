@@ -8,5 +8,7 @@ Chequea mi **perfil de diseño** [aquí!](https://www.instagram.com/2km.exe/)
 
 ### Contacto
 
-Para contactarme en mi mail personal has click [aquí](mailto:juanmanuconte@gmail.com)
-Por contacto por comisiones o propuestas de diseño has click [aquí](mailto:2km.exe.mgmt@gmail.com)
+-Para contactarme en mi mail personal has click [aquí](mailto:juanmanuconte@gmail.com)
+
+
+-Por contacto por comisiones o propuestas de diseño has click [aquí](mailto:2km.exe.mgmt@gmail.com)
