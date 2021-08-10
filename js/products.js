@@ -88,17 +88,7 @@ function sortAndShowProducts(sortCriteria, productsArray){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(b){
-   /*  getJSONData("https://japdevdep.github.io/ecommerce-api/product/all.json").then(function(resultObj){
-        if (resultObj.status === "ok"){
-
-            console.log("Mostre")
-            showProductsList(resultObj.data);
-        }
-    });
-    
-    
-
-     */
+   
     getJSONData("https://japdevdep.github.io/ecommerce-api/product/all.json").then(function(resultObj){
         if (resultObj.status === "ok"){
             sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
@@ -124,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function(b){
         minCount = undefined;
         maxCount = undefined;
 
-        showProductsList();
+        sortAndShowProducts(ORDER_ASC_BY_NAME);
     });
 
     document.getElementById("rangeFilterCount").addEventListener("click", function(){
@@ -147,6 +137,6 @@ document.addEventListener("DOMContentLoaded", function(b){
             maxCount = undefined;
         }
 
-        showProductsList();
+        sortAndShowProducts(ORDER_ASC_BY_NAME);
     });
 });

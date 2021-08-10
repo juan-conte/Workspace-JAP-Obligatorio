@@ -4,3 +4,13 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+
+document.getElementById("check").addEventListener("click",function(){
+    let usuario = document.getElementById("InputMail");
+    let passwd = document.getElementById("InputPass");
+    if(passwd.value != undefined && usuario.value != undefined){
+        window.location.href = "index.html"
+
+    }
+
+});
