@@ -4,13 +4,20 @@
 document.addEventListener("DOMContentLoaded", function(e){
 
 });
+let usuario = undefined;
+let passwd = undefined;
 
 document.getElementById("check").addEventListener("click",function(){
-    let usuario = document.getElementById("InputMail");
-    let passwd = document.getElementById("InputPass");
-    if(passwd.value != undefined && usuario.value != undefined){
+    usuario = document.getElementById("InputMail");
+    passwd = document.getElementById("InputPass");
+    console.log(usuario);
+    console.log(passwd);
+    if(passwd.value != "" && usuario.value != ""){
+        
         window.location.href = "index.html"
 
+    }else{
+        alert("Debe de ingresar ambos campos");
     }
 
 });
