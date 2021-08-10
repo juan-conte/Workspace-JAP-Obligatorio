@@ -37,13 +37,24 @@
   </style>
 </head>
 
-<body class="text-center">
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 08/08/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+<body >
+  <div class="container">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <h1 class="py-2 d-none d-md-inline-block">e-Mercado!</h1>
+    </div>
+
+    <br>
+
+    <div class="mb-3">
+      <label for="InputMail" class="form-label">Usuario</label>
+      <input type="text" class="form-control" id="InputMail" placeholder="Ingrese su usuario" required=true>
+    </div>
+    <div class="mb-3">
+      <label for="InputPass" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" id="InputPass" placeholder="Ingrese su contraseña" required=true>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3" id="check">Ingresar</button>
     </div>
   </div>
 
