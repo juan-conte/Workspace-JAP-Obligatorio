@@ -1,5 +1,6 @@
 var category = {};
 
+
 function showImagesGallery(array){
 
     let htmlContentToAppend = "";

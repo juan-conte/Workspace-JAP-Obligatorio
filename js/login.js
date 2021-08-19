@@ -8,11 +8,13 @@ let usuario = undefined;
 let passwd = undefined;
 
 document.getElementById("check").addEventListener("click",function(){
+    //Guardo el nodo del input en una variable, para luego acceder al atributo value
+    
     usuario = document.getElementById("InputMail");
     passwd = document.getElementById("InputPass");
     
     if(passwd.value != "" && usuario.value != ""){
-
+        //Si hay algo en los campos, dejo pasar al usuario y me guardo en SessionStorage sus datos. Esto es para que no vuelva a solicitar un logeo
         sessionStorage.setItem('usuario',usuario.value);
         sessionStorage.setItem('password',passwd.value);
         window.location.href = "index.html";

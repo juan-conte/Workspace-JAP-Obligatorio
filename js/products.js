@@ -6,8 +6,9 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
-var arraydeproductos = [];
 
+var arraydeproductos = [];
+//Esta funcion ordena a los productos segun las diferentes categorias. Para acomodarla a productos, solamente es recesario modificar en donde se marca
 function sortProductos(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -25,6 +26,7 @@ function sortProductos(criteria, array){
         });
     }else if (criteria === ORDER_BY_PRECIO){
         result = array.sort(function(a, b) {
+            //Aqui en vez de cantidad de articulos, lo filtraremos por precio (por eso accedemos al atributo cost)
             let aCount = parseInt(a.cost);
             let bCount = parseInt(b.cost);
 
@@ -36,6 +38,8 @@ function sortProductos(criteria, array){
 
     return result;
 }
+
+// Aqui se modifica la insercion DOM, veamos que se utiliza practicamente la misma extructura agregando algunos small para acomodarse a la cantidad de atributos. Luego es simplemente modificar los atributos que tuvieran diferente nombre
 
 function showProductsList(lista){
 

@@ -14,6 +14,12 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
+    <!-- Se utiliza como template la pagina ya armada de Categorias. Unicamente los cambios efectuados estan en: 
+    -Link del archivo JSON de donde traemos la informacion de los productos
+    -Insercion por DOM de los archivos JSON
+    -Algunos textos para contextualizar la pagina
+  -->
+
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
@@ -21,6 +27,10 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div >
+          <img class="py-2 d-none d-md-inline-block" src="img/img_avatar.png" style="height: 50px; width: auto; ">
+          <a id="usuario_cartel" class="py-2 d-none d-md-inline-block" href="my-profile.html" style="padding-left: 30px;">Yo</a>
+        </div>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -85,7 +95,6 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-
     <script src="js/products.js"></script>
   </body>
 </html>
