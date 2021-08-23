@@ -7,28 +7,42 @@ var minCount = undefined;
 var maxCount = undefined;
 
 
+
 var arraydeproductos = [];
+function comienzanIgual(texto, otrotexto){
+    return elemento.startsWith(texto)
+
+}
+
+
+
 //Esta funcion ordena a los productos segun las diferentes categorias. Para acomodarla a productos, solamente es recesario modificar en donde se marca
 function sortProductos(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
     {
         result = array.sort(function(a, b) {
-            if ( a.name < b.name ){ return -1; }
-            if ( a.name > b.name ){ return 1; }
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
+
+            if ( aCount < bCount ){ return -1; }
+            if ( aCount > bCount ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
         result = array.sort(function(a, b) {
-            if ( a.name > b.name ){ return -1; }
-            if ( a.name < b.name ){ return 1; }
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
+
+            if ( aCount > bCount ){ return -1; }
+            if ( aCount < bCount ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_BY_PRECIO){
         result = array.sort(function(a, b) {
             //Aqui en vez de cantidad de articulos, lo filtraremos por precio (por eso accedemos al atributo cost)
-            let aCount = parseInt(a.cost);
-            let bCount = parseInt(b.cost);
+            let aCount = parseInt(a.soldCount);
+            let bCount = parseInt(b.soldCount);
 
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
@@ -40,13 +54,14 @@ function sortProductos(criteria, array){
 }
 
 // Aqui se modifica la insercion DOM, veamos que se utiliza practicamente la misma extructura agregando algunos small para acomodarse a la cantidad de atributos. Luego es simplemente modificar los atributos que tuvieran diferente nombre
-
+//&& (comienzanIgual(document.getElementById("buscador").value,producto.name || document.getElementById("buscador").value == "" )
 function showProductsList(lista){
 
     let htmlContentToAppend = "";
     for(let producto of lista){
         if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount))){
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount)) &&
+            (document.getElementById("buscador").value == "" || producto.name.startsWith(document.getElementById("buscador").value,0))){
 
                 htmlContentToAppend += `
                 <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -98,6 +113,16 @@ document.addEventListener("DOMContentLoaded", function(b){
             sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }
     });
+
+   document.getElementById("buscador").addEventListener("keyup", (event)=>{
+    if(currentSortCriteria==undefined)
+    {
+        sortAndShowProducts(ORDER_ASC_BY_NAME);
+    }else{
+        sortAndShowProducts(currentSortCriteria);
+    }
+   
+   })
 
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowProducts(ORDER_ASC_BY_NAME);

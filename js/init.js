@@ -6,7 +6,7 @@ const PRODUCT_INFO_URL = "https://japdevdep.github.io/ecommerce-api/product/5678
 const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/product/5678-comments.json";
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
-
+//Cargando el link del nav que lleva a usuario (No estaba en la entrega pero aproveche a integrarlo ya que estoy guardando datos del mismo)
 document.getElementById("usuario_cartel").textContent = sessionStorage.getItem("usuario");
 
 var showSpinner = function(){
@@ -50,6 +50,7 @@ var getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", function(e){
 });
 
+//Comprobando si los atributos que sabemos que se crearan, fueron ya creados, podemos hacer que entre al login la primera vez que entra a cualquier pagina del eMercado y una vez logeado no lo volvera a solicitar.
 if(sessionStorage.getItem('usuario')==undefined || sessionStorage.getItem('password')==undefined)
 {
   window.location.href = "login.html";
