@@ -16,7 +16,8 @@ function comienzanIgual(texto, otrotexto){
 
 
 
-//Esta funcion ordena a los productos segun las diferentes categorias. Para acomodarla a productos, solamente es recesario modificar en donde se marca
+//Esta funcion ordena a los productos segun las diferentes categorias. Para acomodarla a productos, solamente es recesario modificar en donde se marca.
+// Utilizando los filtros ya creados para order 
 function sortProductos(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -58,10 +59,16 @@ function sortProductos(criteria, array){
 function showProductsList(lista){
 
     let htmlContentToAppend = "";
+    
     for(let producto of lista){
+        var nombre_producto = producto.name.toLowerCase();
+        var texto_buscador = document.getElementById("buscador").value.toLowerCase();
+
+        //Filtra segun rango de precio && si coincide con el texto en el buscador (aun no logro que busque en cualquier parte del nombre del producto y no el inicio)
+
         if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount)) &&
-            (document.getElementById("buscador").value == "" || producto.name.startsWith(document.getElementById("buscador").value,0))){
+            (texto_buscador == "" || nombre_producto.startsWith(texto_buscador,0))){
 
                 htmlContentToAppend += `
                 <a href="product-info.html" class="list-group-item list-group-item-action">
