@@ -65,7 +65,8 @@ function showProductsList(lista){
         var texto_buscador = document.getElementById("buscador").value.toLowerCase();
 
         //Filtra segun rango de precio && si coincide con el texto en el buscador (aun no logro que busque en cualquier parte del nombre del producto y no el inicio)
-
+        //search devuelve donde comienza en el string donde lo invoquemos el texto que le entregamos y -1 si no existen coincidencias
+        //Por lo que si el buscador no esta vacio. Permitimos que muestre solo aquellos productos que tengan alguna coincidencia con el buscador. (Explicacion de condicion en linea 72)
         if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount)) &&
             (texto_buscador == "" || nombre_producto.search(texto_buscador)!= -1)){
