@@ -68,7 +68,7 @@ function showProductsList(lista){
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount)) &&
-            (texto_buscador == "" || nombre_producto.startsWith(texto_buscador,0))){
+            (texto_buscador == "" || nombre_producto.search(texto_buscador)!= -1)){
 
                 htmlContentToAppend += `
                 <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -115,7 +115,7 @@ function sortAndShowProducts(sortCriteria, productsArray){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(b){
    
-    getJSONData("https://japdevdep.github.io/ecommerce-api/product/all.json").then(function(resultObj){
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
             sortAndShowProducts(ORDER_ASC_BY_NAME, resultObj.data);
         }

@@ -6,22 +6,36 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
+
+//Funcion de ordenamiento de Categorias
 function sortCategories(criteria, array){
+    //Declaramos result, un array vacio que va a ser llenado con el arreglo referenciado ya ordenado 
     let result = [];
+
+    //Separamos en casos dependiendo del criterio de ordenamiento solicitado
     if (criteria === ORDER_ASC_BY_NAME)
     {
+        //Asignamos a result el arreglo ya ordenado segun la siguiente funcion que toma de parametros a y b (Seran en este caso, categorias)
         result = array.sort(function(a, b) {
+            //Estas son las condiciones del ordenamiento, si a.name =< b.name los deja como estan (estan ordenados)
+            //Si a.name > b.name entonces hace un switch entre ellos 
+            
             if ( a.name < b.name ){ return -1; }
             if ( a.name > b.name ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
+         //Estas son las condiciones del ordenamiento, si a.name >= b.name los deja como estan (estan ordenados)
+            //Si a.name < b.name entonces hace un switch entre ellos 
+            //Cambia ya que es ahora con criterio descendiente
         result = array.sort(function(a, b) {
             if ( a.name > b.name ){ return -1; }
             if ( a.name < b.name ){ return 1; }
             return 0;
         });
     }else if (criteria === ORDER_BY_PROD_COUNT){
+         //Se parsea el texto para tener valores numeros ya que vienen de un archivo JSON
+         // Y se aplica un orden descendiente 
         result = array.sort(function(a, b) {
             let aCount = parseInt(a.productCount);
             let bCount = parseInt(b.productCount);
@@ -31,7 +45,7 @@ function sortCategories(criteria, array){
             return 0;
         });
     }
-
+    //Finalmente retornamos el arreglo ya ordenado
     return result;
 }
 
