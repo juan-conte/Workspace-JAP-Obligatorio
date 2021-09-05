@@ -14,9 +14,9 @@ document.getElementById("check").addEventListener("click",function(){
     passwd = document.getElementById("InputPass");
     
     if(passwd.value != "" && usuario.value != ""){
-        //Si hay algo en los campos, dejo pasar al usuario y me guardo en SessionStorage sus datos. Esto es para que no vuelva a solicitar un logeo
-        sessionStorage.setItem('usuario',usuario.value);
-        sessionStorage.setItem('password',passwd.value);
+        //Si hay algo en los campos, dejo pasar al usuario y me guardo en localStorage sus datos. Esto es para que no vuelva a solicitar un logeo
+        localStorage.setItem('usuario',usuario.value);
+        localStorage.setItem('password',passwd.value);
         window.location.href = "index.html";
 
     }else{
