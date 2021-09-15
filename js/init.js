@@ -11,7 +11,7 @@ const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 //Cargando el link del nav que lleva a usuario (No estaba en la entrega pero aproveche a integrarlo ya que estoy guardando datos del mismo) : Entrega 1
 //Ahora que si es solicitado esto, ya estaba hecho. : Entrega 2
 
-document.getElementById("usuario_cartel").textContent = localStorage.getItem("usuario");
+document.getElementById("usuario_cartel").textContent = sessionStorage.getItem("usuario");
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 //Comprobando si los atributos que sabemos que se crearan, fueron ya creados, podemos hacer que entre al login la primera vez que entra a cualquier pagina del eMercado y una vez logeado no lo volvera a solicitar.
-if(localStorage.getItem('usuario')==undefined || localStorage.getItem('password')==undefined)
+if(sessionStorage.getItem('usuario')==undefined || sessionStorage.getItem('password')==undefined)
 {
   window.location.href = "login.html";
 }
