@@ -19,17 +19,72 @@ function showImagesGallery(array){
     for(let i = 0; i < array.length; i++){
         let imageSrc = array[i];
 
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+        document.getElementById("indicators").innerHTML +=` <li data-target="#myCarousel" data-slide-to="${i}"></li>`
+        if(i==1)
+        {
+            htmlContentToAppend += `
+            <div class="carousel-item active">
+                <img src="${imageSrc}" style="width:100%;">
             </div>
-        </div>
-        `
+             `;
+        }else{
+            htmlContentToAppend += `
+            <div class="carousel-item ">
+                <img src="${imageSrc}" style="width:100%;">
+             </div>
+            `;
+        }
+        
 
-        document.getElementById("productImagesGallery").innerHTML = htmlContentToAppend;
+        document.getElementById("appendbait").innerHTML = htmlContentToAppend;
     }
 }
+
+function relateds()
+{
+    let prod = [];
+    let prod_info = {};
+    
+    htmlContentToAppend = '';
+    getJSONData(PRODUCT_INFO_URL).then(data => 
+        {
+            prod_info = data.data;
+            
+            getJSONData(PRODUCTS_URL).then(proddata => 
+            {   
+                
+                prod = proddata.data;
+                
+                for(let related of prod_info.relatedProducts)
+                {
+                    htmlContentToAppend += `
+                    <a href="products.html" class="list-group-item list-group-item-action">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="` + prod[related].imgSrc + `" alt="` + prod[related].description + `" class="img-thumbnail">
+                            </div>
+                            <div class="col">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">`+ prod[related].name +`</h4>
+                                    <small class="text-muted">Precio:` +  prod[related].currency +" "+   prod[related].cost + ` artículos</small>
+                                    
+                                </div>
+                                <p class="mb-1">Ver más..</p>
+                            </div>
+                        </div>
+                    </a>
+                    `;
+             
+              
+                }
+                document.getElementById("related").innerHTML += htmlContentToAppend;
+
+            });
+            
+        });
+        
+}
+ 
 
 function showComments(array){
 
@@ -74,6 +129,8 @@ function showComments(array){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+   
+    relateds();
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
@@ -103,8 +160,13 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
-    /* */
-});
+    
+    
+
+    
+})
+
+
 
 document.getElementById("send_comment").addEventListener("click",function(){
     let texto = document.getElementById("comment_text").value;

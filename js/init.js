@@ -54,6 +54,15 @@ var getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", function(e){
 });
 
+
+
+document.getElementById("logout").addEventListener("click",function(){
+  sessionStorage.removeItem('usuario');
+  sessionStorage.removeItem('password');
+  
+  window.location.href = "login.html";
+})
+
 //Comprobando si los atributos que sabemos que se crearan, fueron ya creados, podemos hacer que entre al login la primera vez que entra a cualquier pagina del eMercado y una vez logeado no lo volvera a solicitar.
 if(sessionStorage.getItem('usuario')==undefined || sessionStorage.getItem('password')==undefined)
 {

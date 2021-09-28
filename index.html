@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name=description content="">
     <title>eMercado - Todo lo que busques está aquí</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -34,10 +34,17 @@
           <li class="nav-item active">
             <a class="nav-link" href="sell.html">Vender <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="cart.html">Mi carrito <span class="sr-only">(current)</span></a>
-          </li>
-          <a id="usuario_cartel" class="nav-link" href="my-profile.html"></a>
+          
+          <div class="dropdown">
+            <button id="usuario_cartel" class="btn btn-dark dropdown-toggle bg-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+              <a class="dropdown-item" href="cart.html">Mi carrito</a>
+              <a id="logout" class="dropdown-item" href="">Cerrar Sesión</a>
+            </div>
+          </div>
         </ul>
       </div>
      </nav>
