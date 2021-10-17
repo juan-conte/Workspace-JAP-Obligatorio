@@ -19,7 +19,7 @@ function showImagesGallery(array){
     for(let i = 0; i < array.length; i++){
         let imageSrc = array[i];
 
-        document.getElementById("indicators").innerHTML +=` <li data-target="#myCarousel" data-slide-to="${i}"></li>`
+        document.getElementById("indicators").innerHTML +=` <li data-target="#myCarousel" data-slide-to="${i}"></li>`;
         if(i==1)
         {
             htmlContentToAppend += `

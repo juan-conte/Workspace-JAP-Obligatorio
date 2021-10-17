@@ -68,14 +68,137 @@
       </ul>
     </div>
    </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+ 
+
+   <main role="main" class="p-5">
+
+    <div class="text-center p-4">
+      <h2>Carrito</h2>
+      <p class="lead">Articulos a comprar</p>
     </div>
-  </div>
+    <hr>
+    <table class="table table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Moneda</th>
+          <th scope="col">Costo</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Subtotal</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody id="insertCarrito"> 
+        
+      </tbody>
+    </table>
+
+    <div class="text-center p-4">
+      <h2>Metodo de envio</h2>
+      <hr>
+    </div>
+    
+    
+    <h3>Tipo de envio</h3>
+    <br>
+    
+    <form id="tipoenvio">
+      
+      <input type="radio" name="sendtype" value="0.15" onclick="cargarCostos()" checked="true">
+      <label for="premium">Premium (2-5 días) - Costo del 15% sobre el subtotal.</label>
+      <br>
+      
+      <input type="radio" name="sendtype" value="0.07" onclick="cargarCostos()">
+      <label for="express">Express (5-8 días) - Costo del 7% sobre el subtotal.</label>
+      <br>
+
+      <input type="radio" name="sendtype" value="0.05" onclick="cargarCostos()">
+      <label for="standar">Standard (12 a 15 días) - Costo del 5% sobre el subtotal.</label>
+      
+    </form>
+
+    <br>
+    <h3>Direccion de envio</h3>
+    <br>
+
+    <form>
+      
+      <input type="text" name="calle" placeholder="Calle">
+      <br>
+      
+      <input type="text" name="numero" placeholder="Número">
+      <br>
+
+      <input type="text" name="esquina" placeholder="Esquina">
+      
+      
+    </form>
+    <br>
+
+    <div class="text-center p-4">
+      <h2>Costos</h2>
+      <hr>
+    </div>
+
+    <div class="prod-list-container p-5">
+      
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+              <td>
+                  <strong>Subtotal</strong>
+              </td>
+              <td id="sumProdSub"></td>
+            </tr>
+            <tr >
+              <td>
+                  <strong>Costo de envio</strong>
+              </td>
+              <td id="costPerc"></td>
+            </tr>
+            <tr >
+              <td>
+                  <strong>Total</strong>
+              </td>
+              <td id="fullsum"></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+      
+    </div>
+
+
+    <div class="text-center p-4">
+      <h2>Forma de pago</h2>
+      <hr>
+    </div>
+    <form>
+      
+      <input type="radio" name="payType" value="tarjeta">
+      <label for="premium">Tarjeta de Credito / Debito</label>
+      <br>
+      
+      <input type="radio" name="payType" value="transferencia">
+      <label for="express">Transferencia bancaria</label>
+      <br>
+    </form>
+
+    <div style="text-align: center;">
+      
+      <input class="btn-success shadow" type="Button" name="payType" value="Pagar" style="width: 10em; height: 5em;">
+
+    </div>
+    
+      
+    
+   </main>
+
+
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
