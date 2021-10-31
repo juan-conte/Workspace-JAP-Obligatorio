@@ -60,9 +60,13 @@
             <p class="lead">Verás aquí todos los productos del sitio.</p>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
+
+                <div class="col-1">
+                  <input type="search" id="buscador" placeholder="Buscar" style="width:30vw;"> 
+                </div>
                 
-                <div class="col text-right">
+                <div class="col-8 text-right" style="width: 30vw;">
                     <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
                         <label class="btn btn-light active" id="sortAsc" >
                             <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-sort-amount-up mr-1"></i>$
@@ -76,38 +80,23 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-end">
+            <div class="row ">
               
-              <div class="col-md-6">
-                <div class="col text-left">
-                  <input type="search" id="buscador" placeholder="Buscar"/>
+              <div class="col-1"></div>
+              
+                <label for="min">Filtro:  </label>
+                <input name="min" class="form-control" type="number" placeholder="Min." id="rangeFilterCountMin" style="width: 18vw;">
+                <input name="max"class="form-control" type="number" placeholder="Máx." id="rangeFilterCountMax"style="width: 18vw;">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
                 </div>
-              </div>
-                <div class="col-md-6 col-sm-12 mb-1 container">
-                  <div class="row container p-0 m-0">
-                    <div class="col">
-                      <p class="font-weight-normal text-right my-2">Rango de precio:</p>
-                    </div>
-                    <div class="col">
-                      
-                      <input name="min" class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
-                    </div>
-                    <div class="col">
-                      
-                      <input name="max"class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
-                    </div>
-                    <div class="col-3 p-0">
-                      <div class="btn-group" role="group">
-                        <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                        <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              
+              <div class="col-1"></div>
+              
             </div>
-            <div class="row">
-                <div class="list-group" id="prod-list-container">
-                </div>
+            <div class="row" id="prod-list-container">
+                
             </div>
         </div>
     </main>

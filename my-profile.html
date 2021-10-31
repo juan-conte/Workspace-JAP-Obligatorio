@@ -69,34 +69,62 @@
       </ul>
     </div>
    </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+
+
+
+   <h1 class="text-center">Mi perfil</h1>
+
+
+  <div class="card" style="width: 18rem;">
+    <img src="./img/img_avatar.png" id="preview_profile" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 id="user_name" class="card-title">Usuario</h5>
     </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
+  <div class="accordion " id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Editar informacion
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          <input type="file" name="foto" id="profile_input" value="Subir foto de perfil" onchange="preview()">
+          <br>
+          <hr>
+          <input type="text" name="nombre1" id="nombre1" placeholder="Primer nombre">
+          <input type="text" name="nombre2" id="nombre2" placeholder="Segundo nombre">
+          <br>
+          <hr>
+          <input type="text" name="apellido1" id="apellido1" placeholder="Primer apellido">
+          <input type="text" name="apellido2" id="apellido2" placeholder="Segundo apellido">
+          <br>
+          <hr>
+          <input type="email" name="correo" id="correo" placeholder="E-Mail">
+          <br>
+          <hr>
+          <input type="tel" name="telefono" id="telefono" placeholder="Telefono de contacto">
+          <br>
+          <br>
+          <button id="register" type="button" class="btn btn-outline-primary">Editar</button>
+        </div>
+      </div>
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    
   </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
+
+
+</div>
+
+
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>

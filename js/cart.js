@@ -69,6 +69,8 @@ function eliminarItem(i){
     cargarcarritos(carritoCargado);
     cargarCostos(carritoCargado);
 }
+
+
 //Actualizar costos (suma de subtotales envios etc)
 function cargarCostos(){
 
@@ -107,10 +109,6 @@ document.addEventListener("DOMContentLoaded", function(b){
 function updatePrice(i)
 {   
     
-    
-    
-
-        
         let cantidad = 0;
         let subtotal = 0;
         let costo = 0;

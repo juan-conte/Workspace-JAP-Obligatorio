@@ -72,21 +72,23 @@ function showProductsList(lista){
             (texto_buscador == "" || nombre_producto.search(texto_buscador)!= -1)){
 
                 htmlContentToAppend += `
-                <a href="product-info.html" class="list-group-item list-group-item-action">
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="` + producto.imgSrc + `" alt="` + producto.description + `" class="img-thumbnail">
-                        </div>
-                        <div class="col">
-                            <div class="d-flex w-100 justify-content-between">
-                                <h4 class="mb-1">`+ producto.name +`</h4>
-                                <small class="text-muted">Precio:` + producto.currency +" "+  producto.cost + ` artículos</small>
-                                <small class="text-muted">Vendidos: ` + producto.soldCount + ` artículos</small>
+                <div class="col-12 col-md-4">
+                    <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                        <img class="bd-placeholder-img card-img-top" src="${producto.imgSrc}">
+                        <h3 class="m-3">${producto.name}</h3>
+                        <div class="card-body">
+                            <p class="card-text">${producto.description}</p>
+                            <div class="row">
+                                <div class="col-6"><small class="text-muted">Precio:` + producto.currency +" "+  producto.cost + ` artículos</small></div>
+                                <div class="col-2"></div>
+                                <div class="col-4"><small class="text-muted">Vendidos: ` + producto.soldCount + ` artículos</small></div>
                             </div>
-                            <p class="mb-1">` + producto.description + `</p>
+                                
+                            
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+
                 `
          
             document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;

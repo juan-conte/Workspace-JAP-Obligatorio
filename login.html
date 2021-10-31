@@ -54,11 +54,62 @@
       <input type="password" class="form-control" id="InputPass" placeholder="Ingrese su contraseña" required=true>
     </div>
     <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-3" id="check">Ingresar</button>
+      <button type="submit" class="btn btn-outline-primary" id="check">Ingresar</button>
     </div>
+  
+  
+
+    <br>
+    <div class="accordion " id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Registrarse
+            </button>
+          </h2>
+        </div>
+    
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <img src="./img/img_avatar.png" id="preview_profile" class="card-img-top" alt="...">
+            <input type="file" name="foto" id="profile_input" value="Subir foto de perfil" onchange="preview()">
+             <br>
+            <hr>
+
+            <input type="text" name="nombre1" id="nombre1" placeholder="Primer nombre"><i style="color: red;">*</i>
+            <input type="text" name="nombre2" id="nombre2" placeholder="Segundo nombre">
+            <br>
+            <hr>
+            <input type="text" name="apellido1" id="apellido1" placeholder="Primer apellido"><i style="color:red;">*</i>
+            <input type="text" name="apellido2" id="apellido2" placeholder="Segundo apellido">
+            <br>
+            <hr>
+            <input type="email" name="correo" id="correo" placeholder="E-Mail"><i style="color: red;">*</i>
+            <br>
+            <hr>
+            <input type="tel" name="telefono" id="telefono" placeholder="Telefono de contacto">
+            <br>
+            <br>
+            <button id="register" type="button" class="btn btn-outline-primary">Registrar</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  
+  
   </div>
 
+
+
   
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/my-profile.js"></script>
   <script src="js/login.js"></script>
 </body>
 </html>
